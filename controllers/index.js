@@ -1,6 +1,9 @@
 const router = require('express').Router();
-//const INSERT CONTROLLER ROUTE HERE = require('./CONTROLLER ROUTE');
 
-router.use('/', ); //CONTROLLER ROUTE CONST
+const apiRoutes = require('./api');
+const homeRoutes = require('./homeRoutes');
+
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
 
 module.exports = router;
