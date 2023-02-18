@@ -4,22 +4,23 @@ const Post = require('./post');
 const User = require('./user');
 
 
-// Product belongsTo Category
+// Post belongsTo user
 Post.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
   });
 
-// Category has many Product
+// post has many comment
 Post.hasMany(Comment, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE',
   });
 
-  Comment.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-  })
+//comment belongsto user
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+})
 
 
   //verify if foreign key is camelcase or not, because they need to match in post/put routes
