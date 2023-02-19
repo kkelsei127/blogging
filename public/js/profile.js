@@ -4,6 +4,8 @@ const newFormHandler = async (event) => {
     const post_name = document.querySelector('#post-name').value.trim();
     const post_body = document.querySelector('#post-body').value.trim();
     
+    //should I add comment info here too?
+      //like mirror the same logic below but for comments?
   
     if (post_name && post_body) {
       const response = await fetch(`/api/post`, {
