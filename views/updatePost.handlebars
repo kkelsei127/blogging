@@ -1,0 +1,19 @@
+{{#if logged_in}}
+    <div class="text-center">
+        <h2>What would you like to do with this post?</h2>
+    </div>
+
+    <div class="text-center">
+    <h3>{{post_name}}</h3>
+    <p>{{post_body}}</p>
+    <p>Created by {{user.username}} on {{format_date createdAt}}</p>
+    <p>
+        <button class="delete-post-btn btn btn-primary">Delete!</button>
+    </p>
+    <p>
+        <a href="/post/{{id}}/edit" class="btn btn-primary">Update!</button>
+    </p>
+    </div>
+{{else}}
+    <a href="/login">Login for full access!</a>
+{{/if}}

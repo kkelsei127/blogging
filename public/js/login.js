@@ -44,10 +44,18 @@ const loginFormHandler = async (event) => {
     }
   };
   
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+  if (document.querySelector('.login-form')) {
+    // do something if the element exists
+    document
+      .querySelector('.login-form')
+      .addEventListener('submit', loginFormHandler);
+  }
   
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+  if (document.querySelector('.signup-form')) {
+    // do something if the element exists
+    document
+      .querySelector('.signup-form')
+      .addEventListener('submit', signupFormHandler);
+  }
+  
+  

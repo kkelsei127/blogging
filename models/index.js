@@ -10,6 +10,11 @@ Post.belongsTo(User, {
     onDelete: 'CASCADE'
   });
 
+// User.hasMany(Post, {
+//   foreignKey: 'user_id',
+//   onDelete:'CASCADE',
+// });
+
 // post has many comment
 Post.hasMany(Comment, {
     foreignKey: 'post_id',
@@ -22,12 +27,9 @@ Comment.belongsTo(User, {
   onDelete: 'CASCADE'
 })
 
+// Comment.belongsTo(Post, {
+//   foreignKey: 'post_id',
+//   onDelete: 'CASCADE',
+// })
 
-  //verify if foreign key is camelcase or not, because they need to match in post/put routes
-
-
-module.exports = {
-  Comment,
-  User,
-  Post
-};
+module.exports = { Comment, User, Post };

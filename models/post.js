@@ -21,18 +21,17 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false
     },
-    comment_id:{
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'comment',
-            key: 'id',
-            unique: false
-        }
-    }
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: { model: "user", key: "id"}
+    },
+    // comment_id: {
+    //   type: DataTypes.STRING,
+    //   references: { model: "comment", key: "id"}
+    // }
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'post',

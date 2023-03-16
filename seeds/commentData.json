@@ -1,0 +1,12 @@
+[
+    {
+        "comment_content": "This is a great app!",
+        "user_id": 1,
+        "post_id": 1
+    },
+    {
+        "comment_content": "This is the hardest test ever!",
+        "user_id": 3,
+        "post_id": 2
+    }
+]

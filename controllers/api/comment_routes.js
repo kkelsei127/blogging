@@ -1,23 +1,22 @@
 const router = require('express').Router();
-const { user, post, comment } = require('../../models');
+const { Comment, Post } = require('../../models');
+const withAuth = require('../../utils/auth');
 
+// The `/api/comment` endpoint
 
 //get all comments for one post
-router.get('/comments', async(req, res) => {
+router.get('/:id', async(req, res) => {
     try{
-        const commentData = comment.findByPk(req.params.comment_id, {
+        const commentData = await Post.findByPk(req.params.id, {
             include: [
-                {
-                    model: post,
-                    attributes: [
-                        'id',
-                        'comment_content'
-                    ],
-                },
+                {model: Comment},
             ],
         });
-
-        const comment = commentData.get({ plain: true });
+        
+        // console.log(commentData.comment_content)
+        
+        const comment = commentData.map((Post) => Post.get({ plain: true }));
+        console.log(comment)
         res.render('comment', { comment });
     } catch (err) {
         res.status(500).json(err);
@@ -26,17 +25,14 @@ router.get('/comments', async(req, res) => {
 });
 
 //create a comment
-router.post('/comment', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         
-        const commentData = await comment.create({
-        //TODO link this to a post ???
-        //maybe ...
-            //where: {
-                //id: req.params.post_id?
-            //}
-            id: req.body.id,
-            comment_content: req.body.comment_content,
+        const commentData = await Comment.create({
+            // make sure this includes the post_id and comment_content in the req.body from the frontend
+        post_id: req.body.post_id,
+        comment_content: req.body.comment_content,
+        user_id: req.session.user_id
         });
         res.status(200).json(commentData);
     } catch (err) {

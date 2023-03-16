@@ -1,8 +1,13 @@
-<div class="text-center">
-  <h2>{{post_name}}</h2>
-  <p>{{post_body}}</p>
-  <p>Created by {{user_name}} on {{format_date date_created}}</p>
-  <p>
-    <button class="btn btn-primary">Read up or comment!</button>
-  </p>
-</div>
+
+  <div class="text-center">
+    <h2>{{post_name}}</h2>
+    <p>{{post_body}}</p>
+    <p>Created by {{user.username}} on {{format_date createdAt}}</p>
+    <p>
+      <a href="../api/comments/{{id}}" class="btn btn-primary">Leave a comment!</a>
+    </p>
+    <p>
+        {{post.comments.comment.comment_content}}
+    </p>
+  </div>
+

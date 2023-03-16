@@ -2,17 +2,18 @@
     {
       "post_name": "Music Near Me",
       "post_body": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-      "comment_content": "This is a great app!"
+      "user_id": 1
     },
     {
       "post_name": "The Ultimate Tech Quiz",
       "post_body": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-      "comment_content": "This is the hardest test ever!"
+      "user_id": 3
     },
     {
       "post_name": "Roll 'Em Up",
       "post_body": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-      "comment_content": "So addicting!"
+      "comment_content": "So addicting!",
+      "user_id": 2
     }
   ]
   

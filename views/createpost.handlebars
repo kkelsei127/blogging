@@ -1,0 +1,18 @@
+<form class="form create-form">
+      <div class="form-group">
+        <label for="post_name">Post Title:</label>
+        <input class="form-input" type="text" id="post_name" name="post_name" />
+      </div>
+      <div class="form-group">
+        <label for="post_body">Post Content:</label>
+        <input class="form-input" type="text" id="post_body" name="post_body" />
+      </div>
+      {{!-- <div class="form-group">
+        <label for="post_comment">Comments KELSEI REMEMBER TO ADD THIS TO PROFILE.JS:</label>
+        <textarea class="form-input" id="post_comment" name="post_comment"></textarea>
+      </div> --}}
+      <div class="form-group">
+        <button class="create-post-btn btn btn-sm btn-danger" data-id="{{post.id}}">Create!</button>
+      </div>
+    </form>
+<script src="/js/create.js"></script>
