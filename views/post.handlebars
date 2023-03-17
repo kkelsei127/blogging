@@ -3,11 +3,30 @@
     <h2>{{post_name}}</h2>
     <p>{{post_body}}</p>
     <p>Created by {{user.username}} on {{format_date createdAt}}</p>
-    <p>
+    {{!-- <p>
       <a href="../api/comments/{{id}}" class="btn btn-primary">Leave a comment!</a>
-    </p>
+    </p> --}}
     <p>
-        {{post.comments.comment.comment_content}}
+      Current Comments:<br>
+      Here's what others have to say:<br>
+      {{#each comments as |comment|}}
+        {{comment.comment_content}}
+      {{/each}}
     </p>
+
+  </div>
+  <div>
+    <form class="form update-form">
+  
+      <div class="form-group">
+        <label for="comment_content">Add a comment:</label>
+        <input type="hidden" name="post_id" value="{{id}}" />
+        <input class="form-input" type="text" id="comment_content" name="comment_content" />
+      </div>
+      <div class="form-group">
+        <button class="add-comment-btn btn btn-sm btn-danger" data-id="{{comment.id}}">Create!</button>
+      </div>
+    </form>  
   </div>
 
+<script src="/js/update.js"></script>

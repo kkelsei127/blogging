@@ -19,7 +19,7 @@
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/post/{{id}}">{{post_name}}</a></h4>
-        <button class="delete-post-btn btn btn-sm btn-danger" data-post-id="{{postId}}">DELETE</button>
+        <button class="delete-post-btn btn btn-sm btn-danger" name="post_id" value="{{id}}" data-id="{{id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
