@@ -7,10 +7,9 @@
       <a href="../api/comments/{{id}}" class="btn btn-primary">Leave a comment!</a>
     </p> --}}
     <p>
-      Current Comments:<br>
       Here's what others have to say:<br>
       {{#each comments as |comment|}}
-        {{comment.comment_content}}
+       "{{comment.comment_content}}" -{{user.username}}
       {{/each}}
     </p>
 
